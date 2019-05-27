@@ -18,4 +18,15 @@ If `Docker` is correctly installed you should get something like this :
 
         Docker version 18.09.6, build 481bc77
 
+## Task 2: Add ubuntu user to the Docker group
+
+This is a step you don't really have to remember from this workshop but it's a
+lot easier for the following labs if we put your user in the `Docker group`. This
+is the group that can access the `Docker` service without using `sudo`.
+
+        sudo usermod -aG docker ubuntu
+
+Since we've brought it up, this command will modify the user ubuntu and `-a (append)`
+`-G (groups)` the `docker` group to the ubuntu user. If we used `-g` the command
+
 You have now completed this lab.

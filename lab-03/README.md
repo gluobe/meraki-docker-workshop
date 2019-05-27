@@ -6,7 +6,7 @@ These are the commands you are probably going to use the most.
 ## Task 1: Docker info
 
 
-        sudo docker info
+        docker info
 
 
 The above command should generate output such as the output below:
@@ -68,18 +68,18 @@ The above command should generate output such as the output below:
 
 To see what containers are running at the moment you can use the `ps` commando.
 
-        sudo docker ps
+        docker ps
 
 The basic `docker ps` command will only list running containers. If you want to
 see all containers that are on the system you can use the `-a` option.
 
-        sudo docker ps -a
+        docker ps -a
 
 ## Task 3: List the images
 
 To see what images are on the system you can use this commando:
 
-        sudo docker images
+        docker images
 
 This will list all the images that are currently downloaded to the system.
 
