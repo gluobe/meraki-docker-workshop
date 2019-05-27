@@ -6,7 +6,7 @@ These are the commands you are probably going to use the most.
 ## Task 1: Docker info
 
 
-        docker info
+        sudo docker info
 
 
 The above command should generate output such as the output below:
