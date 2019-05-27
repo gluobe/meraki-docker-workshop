@@ -12,7 +12,8 @@ To connect to this cloud instance we will need `Putty`. You can download it
 Fill in the `hostname or ip address` box with the provided `ip address`. Port
 `22` is already the correct port. This doesn't need any other configuration.
 
-> TEXTBLOCK TO DOWNLOAD THE PPK FILE
+The `.ppk` file that is needed for the next configuration is going to be provided
+by us via Slack. 
 
 We will have to do some more configuration to connect to the instance though. Go
 to `connection -> ssh -> auth -> private key file for authentication` select the
