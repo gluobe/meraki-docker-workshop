@@ -81,7 +81,7 @@ The result of our `-p` command is also visable in this output. At the `PORTS` se
 you can see that our localhost `0.0.0.0` port `8080` is mapped to the `80` port
 of the container.
 
-![Nginx port mapping](images/lab-04-port-mapping.jpg)
+![Nginx port mapping](images/lab-04-port-mapping.png)
 
 Visit the service with the external `ip address` of you instance. You used this
 `IP` to ssh to the instance.
