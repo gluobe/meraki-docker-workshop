@@ -28,6 +28,7 @@ is the group that can access the `Docker` service without using `sudo`.
 
 Since we've brought it up, this command will modify the user ubuntu and `-a (append)`
 `-G (groups)` the `docker` group to the ubuntu user. If we used `-g` the command
+you wil overwrite your primary group. Most of the time this is not what we want. 
 
 Before we can use this new group we need to logout and log back in via ssh.
 
