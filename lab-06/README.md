@@ -1,4 +1,4 @@
-# Lab 06 - Docker on local machine
+# Lab 06 - Docker on your local machine
 
 Now that you completed the Docker workshop in the cloud we are going to install
 Docker locally. This is probably the usecase for most of the developers.
@@ -15,4 +15,4 @@ you will need a [Docker Hub](https://hub.docker.com/) account, see
 
 ## Task 2:
 
-Repeat [lab-05](../lab-05) and [lab-06](../lab-06) on your local machine. 
+Repeat [lab-04](../lab-04) and [lab-05](../lab-05) on your local machine.

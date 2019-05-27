@@ -1,4 +1,4 @@
-# Lab 02 - Creating and sharing your own Docker images
+# Lab 05 - Creating and sharing your own Docker images
 
 In this lab we will focus on Docker images.  We will learn what they are, where
 to look for them and even explore the possibility of building our very own

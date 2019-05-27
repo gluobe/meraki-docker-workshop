@@ -10,9 +10,8 @@ In this hands-on workshop you will learn the basics of Docker.
 * [Lab 03 - Basic Docker commands](lab-03)
 * [Lab 04 - Running your first Docker containers](lab-04)
 * [Lab 05 - Creating and sharing your own Docker images](lab-05)
-* [Lab 06 - Additional Docker operations](lab-06)
-* [Lab 07 - Dockerfile best-practices](lab-07)
-* [Lab 08 - Exercise](lab-08)
+* [Lab 06 - Docker on your local machine](lab-06)
+* [Lab 07 - Exercise](lab-07)
 
 ## People
 
