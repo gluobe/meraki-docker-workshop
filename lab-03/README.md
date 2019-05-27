@@ -88,11 +88,11 @@ This will list all the images that are currently downloaded to the system.
 To delete certain things you can use the `rm` commando. For containers this would
 be:
 
-        sudo docker rm <container_id>
+         docker rm <container_id>
 
 For images:
 
-        sudo docker image rm <image_id>
+         docker image rm <image_id>
 
 The `id's` of the containers and images are found with the commands you found in
 `Task 1` and `Task 2`.

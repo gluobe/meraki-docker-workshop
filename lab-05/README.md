@@ -35,17 +35,17 @@ You can run containers from images that you built yourself or from images that
 you pulled from a containers registry (all images from the previous lab were
 pulled from the public container registry named Docker Hub). Docker Hub has
 millions of images that are created and shared by regular users. Additionally,
-Docker Hub hosts official images ( e.g Ubuntu, Redis, and Mongo) that are
+Docker Hub hosts official images ( e.g Ubuntu, Nginx, Redis, and Mongo) that are
 created and maintained by their respective companies.
 
 Issue the following commands and observe the output:
 
 ```
-docker search ubuntu
+docker search nginx
 ```
 
 When you execute this command you will search Docker Hub for all images that
-contain the word 'ubuntu' in them.
+contain the word 'nginx' in them.
 
 Alternatively you can search Docker Hub from the web by going to
 https://hub.docker.com/.
@@ -61,91 +61,45 @@ Once you have identified an image you want to use you can `pull` it from the
 registry.  Pulling an image means that you will download it to your local system
 (laptop).
 
-Use the command below to pull the `ubuntu` image:
+Use the command below to pull the `nginx` image:
 
-```
-docker pull ubuntu
-```
+        docker pull nginx
 
 Your output should be something like:
 
-```
-latest: Pulling from library/ubuntu
-
-c63fb41c2213: Pull complete
-99fcaefe76ef: Pull complete
-5a4526e952f0: Pull complete
-1d073211c498: Pull complete
-Digest: sha256:8b1bffa54d8a58395bae61ec32f1a70fc82a939e4a7179e6227eb79e4c3c56f6
-Status: Downloaded newer image for ubuntu:latest
-```
+        Using default tag: latest
+        latest: Pulling from library/nginx
+        743f2d6c1f65: Pull complete
+        6bfc4ec4420a: Pull complete
+        688a776db95f: Pull complete
+        Digest: sha256:23b4dcdf0d34d4a129755fc6f52e1c6e23bb34ea011b315d87e193033bcd1b68
+        Status: Downloaded newer image for nginx:latest
 
 To see which images you have pulled/cached locally issue the command below:
 
-```
-docker images
-```
+        docker images
 
 The output of the above command should look something like (pay special
 attention to the `SIZE` of the images):
 
-```
-REPOSITORY           TAG                 IMAGE ID            CREATED             SIZE
-gluobe/hello-world   latest              ed96b620d6ab        7 hours ago         1.2MB
-busybox              latest              d8233ab899d4        7 days ago          1.2MB
-nginx                latest              f09fe80eb0e7        2 weeks ago         109MB
-ubuntu               latest              47b19964fb50        2 weeks ago         88.1MB
-centos               latest              1e1148e4cc2c        2 months ago        202MB
-```
+        REPOSITORY           TAG                 IMAGE ID            CREATED             SIZE
+        gluobe/hello-world   latest              ed96b620d6ab        7 hours ago         1.2MB
+        busybox              latest              d8233ab899d4        7 days ago          1.2MB
+        nginx                latest              f09fe80eb0e7        2 weeks ago         109MB
+        ubuntu               latest              47b19964fb50        2 weeks ago         88.1MB
+        centos               latest              1e1148e4cc2c        2 months ago        202MB
 
 In the above output you will also notice a `TAG` column, tags representspecific
 versions of the image, if no tag is specified the 'latest' tag is being used.
 
-```
-docker pull centos:6
-docker pull centos:7
-```
+        docker pull centos:6
+        docker pull centos:7
 
 > NOTE: the `latest` tag can often be confusing as there could be more recent
 > images with a different tags, it is best-practice to always use a specific tag
 > when working with Docker images
 
-## Task 3: building your own Docker images (manual)
-
-Docker images are immutable by nature.  Most use-cases however require that you
-make changes to the original image (also known as `base image`).  Some examples
-are adding your own binaries/code or installinging dependencies into the image.
-
-So how do you make changes to existing images (better known as building new
-images)?  Doing it manually involves a couple of steps:
-
-1. We start a container (non-interactive) from a base image (centos:7) and
-install an additional package into the container, it is important that we give
-the container a name as we will use the name as a reference in the next step:
-
-```
-docker run --name centos_elinks centos:7 yum -y install elinks
-```
-
-2. Using the container name specified in the previous step we `commit` the
-change into a new image:
-
-```
-docker commit centos_elinks centos_elinks:7
-```
-
-To verify that the elinks package has indeed been installed on the new image,
-simply run the following commands:
-
-```
-docker run -ti centos:7 elinks
-docker run -ti centos_elinks:7 elinks
-```
-
-The first container should fail with the following error message:
-`executable file not found in $PATH`, the second container should work.
-
-## Task 4: building your own Docker images (automated)
+## Task 3: building your own Docker images (automated)
 
 Obviously the manual procedure from the previous task is not something you want
 to use when building a multitude of images.  What you would want instead is to
@@ -173,28 +127,24 @@ Create (vim, nano,...) a file with the following content, and save it into your
 current working directory with the name `Dockerfile` (important that you do not
 specify a file extention):
 
-```
-FROM centos:7
+        FROM nginx
 
-RUN yum -y install elinks
-
-CMD ["elinks"]
-```
+        COPY html/index.html /usr/share/nginx/html/index.html
+        COPY html/i-know-docker.jpg /usr/share/nginx/html/i-know-docker.jpg
 
 To build a new image using the above Dockerfile run the following command:
 
-```
-docker build -t centos_elinks_dockerfile:7 .
-```
+        docker build -t my_nginx .
 
 > NOTE: the `.` at the end of the command is very important, it tells the build
 > command to search for the `Dockerfile` in the current (`.`) directory
 
 Test with:
 
-```
-docker run -ti centos_elinks_dockerfile:7
-```
+        docker run -p 8080:80 -d my_nginx
+
+You should be able to browse to your instance `IP` again and find an updated
+`Nginx` service with an image and custom `html`.
 
 ## Task 5: pushing Docker images to a registry
 
@@ -214,9 +164,7 @@ registries require you to first authenticate.
 
 To authenticate to the Docker Hub run the following command:
 
-```
-docker login
-```
+        docker login
 
 > NOTE: when you do not specifically specify a registry host, it will assume
 > that you want to login into the Docker Hub, should you want to login into
@@ -229,44 +177,40 @@ namespacing is handled on GitHub.
 Because the Docker Hub username differs for everybody we will work with a
 variable, this way you can keep copy/pasting the following commands:
 
-```
-export DOCKER_HUB_USERNAME=<YOUR_DOCKER_HUB_USERNAME>
-```
+        export DOCKER_HUB_USERNAME=<YOUR_DOCKER_HUB_USERNAME>
 
 Before we can push an image, we need to re-tag (rename) the image we created in
 the previous task so it includes our username:
 
-```
-docker tag centos_elinks_dockerfile:7 ${DOCKER_HUB_USERNAME}/centos_elinks_dockerfile:7
-```
+        docker tag my_nginx ${DOCKER_HUB_USERNAME}/my_nginx:1
 
 > NOTE: when you do not specifically specify a registry host, it will push the
 > image to the Docker Hub, should you want to push to a different registry,
-> simply add it `docker tag centos_elinks_dockerfile:7 quay.io/${DOCKER_HUB_USERNAME}/centos_elinks_dockerfile:7`
+> simply add it `docker tag my_nginx quay.io/${DOCKER_HUB_USERNAME}/my_nginx:1`
 
 You should see at least 2 images now when you run `docker image ls`, one
-`${DOCKER_HUB_USERNAME}/centos_elinks_dockerfile:7>` and one `centos_elinks_dockerfile:7`:
+`${DOCKER_HUB_USERNAME}/my_nginx:1>` and one `my_nginx`:
 
-```
-REPOSITORY                         TAG                 IMAGE ID            CREATED             SIZE
-trescst/centos_elinks_dockerfile   7                   1e9c0ff2dc02        3 hours ago         288MB
-centos_elinks_dockerfile           7                   1e9c0ff2dc02        3 hours ago         288MB
-```
+
+        REPOSITORY                         TAG                 IMAGE ID            CREATED             SIZE
+        trescst/my_nginx:1                 1                   1e9c0ff2dc02        3 hours ago         288MB
+        my_nginx                           latest              1e9c0ff2dc02        3 hours ago         288MB
+
 
 To push the image to the Docker Hub run the following command:
 
-```
-docker push ${DOCKER_HUB_USERNAME}/centos_elinks_dockerfile:7
-```
+
+        docker push ${DOCKER_HUB_USERNAME}/my_nginx:1
+
 
 If you should see something like the output below:
 
-```
-The push refers to repository [docker.io/trescst/centos_elinks_dockerfile]
-4a92a20976a5: Layer already exists
-071d8bd76517: Layer already exists
-7: digest: sha256:06d67383803e113bda94e3fb782a9e81c41665a5b4ab514c8b9d6c6b88de9f54 size: 741
-```
+
+        The push refers to repository [docker.io/trescst/my_nginx]
+        4a92a20976a5: Layer already exists
+        071d8bd76517: Layer already exists
+        7: digest: sha256:06d67383803e113bda94e3fb782a9e81c41665a5b4ab514c8b9d6c6b88de9f54 size: 741
+
 
 ## Task 6: sharing images
 
@@ -275,7 +219,7 @@ shared with your colleagues. So share your image name on Slack so your
 colleagues can test your image (and you can test their image).
 
 ```
-docker run <COLLEAGUE_DOCKER_HUB_USERNAME>/centos_elinks_dockerfile:7
+docker run <COLLEAGUE_DOCKER_HUB_USERNAME>/my_nginx:1
 ```
 
 ## Task 7: clean up
