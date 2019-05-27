@@ -189,7 +189,7 @@ the previous task so it includes our username:
 > simply add it `docker tag my_nginx quay.io/${DOCKER_HUB_USERNAME}/my_nginx:1`
 
 You should see at least 2 images now when you run `docker image ls`, one
-`${DOCKER_HUB_USERNAME}/my_nginx:1>` and one `my_nginx`:
+`${DOCKER_HUB_USERNAME}/my_nginx:1` and one `my_nginx`:
 
 
         REPOSITORY                         TAG                 IMAGE ID            CREATED             SIZE
