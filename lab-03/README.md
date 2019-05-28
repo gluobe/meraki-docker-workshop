@@ -145,7 +145,7 @@ For images:
          Deleted: sha256:055936d3920576da37aa9bc460d70c5f212028bda1c08c0879aedf03d7a66ea1
          Deleted: sha256:f1b5933fe4b5f49bbe8258745cf396afe07e625bdab3168e364daf7c956b6b81
 
-Here I deleted the `alpine` image on the system.
+Here the `alpine` image is deleted from the system.
 
 The `ID's` of the containers and images are found with the commands you found in
 `Task 1` and `Task 2`.
