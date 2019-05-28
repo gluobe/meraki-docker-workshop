@@ -132,9 +132,9 @@ be:
 
          729890d7978a
 
-I deleted the first nginx container shown in the command above. Given that I
-deleted this container I had to use the id `729890d7978a`. The output for the
-`rm` command is just the `ID` of the container.
+Delete the first nginx container shown in the command above. Given that this is the
+container you would need to delete you would have to use the id `729890d7978a`.
+The output for the `rm` command is just the `ID` of the container.
 
 For images:
 
