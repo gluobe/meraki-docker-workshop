@@ -88,6 +88,4 @@ Visit the service with the external `ip address` of you instance. You used this
 
 To clean up run the following command:
 
-```
-docker system prune
-```
+        docker system prune

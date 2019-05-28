@@ -40,9 +40,7 @@ created and maintained by their respective companies.
 
 Issue the following commands and observe the output:
 
-```
-docker search nginx
-```
+        docker search nginx
 
 When you execute this command you will search Docker Hub for all images that
 contain the word 'nginx' in them.
@@ -191,26 +189,20 @@ the previous task so it includes our username:
 You should see at least 2 images now when you run `docker image ls`, one
 `${DOCKER_HUB_USERNAME}/my_nginx:1` and one `my_nginx`:
 
-
         REPOSITORY                         TAG                 IMAGE ID            CREATED             SIZE
         trescst/my_nginx:1                 1                   1e9c0ff2dc02        3 hours ago         288MB
         my_nginx                           latest              1e9c0ff2dc02        3 hours ago         288MB
 
-
 To push the image to the Docker Hub run the following command:
-
 
         docker push ${DOCKER_HUB_USERNAME}/my_nginx:1
 
-
 If you should see something like the output below:
-
 
         The push refers to repository [docker.io/trescst/my_nginx]
         4a92a20976a5: Layer already exists
         071d8bd76517: Layer already exists
         7: digest: sha256:06d67383803e113bda94e3fb782a9e81c41665a5b4ab514c8b9d6c6b88de9f54 size: 741
-
 
 ## Task 6: sharing images
 
@@ -218,15 +210,11 @@ The image you just pushed will be  public by default, so they can easily be
 shared with your colleagues. So share your image name on Slack so your
 colleagues can test your image (and you can test their image).
 
-```
-docker run <COLLEAGUE_DOCKER_HUB_USERNAME>/my_nginx:1
-```
+        docker run <COLLEAGUE_DOCKER_HUB_USERNAME>/my_nginx:1
 
 ## Task 7: clean up
 
 To clean up run the following commands:
 
-```
-docker system prune
-unset DOCKER_HUB_USERNAME
-```
+        docker system prune
+        unset DOCKER_HUB_USERNAME
