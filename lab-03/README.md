@@ -113,7 +113,7 @@ see all containers that are on the system you can use the `-a` option.
 
 To see what images are on the system you can use this commando:
 
-        docker
+        docker images
 
         REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE
         alpine              latest              055936d39205        2 weeks ago         5.53MB
