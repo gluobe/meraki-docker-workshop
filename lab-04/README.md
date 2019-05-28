@@ -81,8 +81,8 @@ of the container.
 
 ![Nginx port mapping](images/lab-04-port-mapping.png)
 
-Visit the service with the external `ip address` of you instance. You used this
-`IP` to ssh to the instance.
+Visit the service with in your browser on `workshop_instance<number>.gluo.cloud`
+and you should see a working `nginx` deployment. 
 
 ## Task 5: clean up
 
