@@ -10,11 +10,11 @@ Fortunatly for us there is a one line command to install `Docker` on this instan
         curl -sSL https://get.docker.com/ | sh
 
 When this script is finished we should have `Docker` installed on the instance.
-Verify with the following command :
+You can verify this with the following command :
 
         docker --version
 
-If `Docker` is correctly installed you should get something like this :
+If `Docker` is installed correctly you should get something like this :
 
         Docker version 18.09.6, build 481bc77
 
@@ -28,7 +28,7 @@ is the group that can access the `Docker` service without using `sudo`.
 
 Since we've brought it up, this command will modify the user ubuntu and `-a (append)`
 `-G (groups)` the `docker` group to the ubuntu user. If we used `-g` the command
-you wil overwrite your primary group. Most of the time this is not what we want. 
+you wil overwrite your primary group. Most of the time this is not what we want.
 
 Before we can use this new group we need to logout and log back in via ssh.
 
