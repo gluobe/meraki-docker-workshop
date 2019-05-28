@@ -104,7 +104,23 @@ case.
         ENTRYPOINT [ "npm", "start" ]
 
 It will start the server and serve our service on port `8080` inside the
-container. Let's build this image.
+container. Your entire `Dockerfile` should look something like this.
+
+        FROM node:8
+
+        WORKDIR /usr/src/app
+
+        COPY package*.json ./
+
+        RUN npm install
+
+        COPY . .
+
+        EXPOSE 8080
+
+        ENTRYPOINT [ "npm", "start" ]
+
+Let's build this image.
 
         docker build -t ${DOCKER_HUB_USERNAME}/hello-javascript .
 
