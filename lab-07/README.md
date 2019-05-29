@@ -25,7 +25,6 @@ You can follow the following steps to create a simple HelloWorld javascript
 application. Be free to use your own imagination in creating this application.
 
 Start with a `package.json` file with the following content.
-
 ```
 {
   "name": "docker_web_app",
@@ -41,28 +40,27 @@ Start with a `package.json` file with the following content.
   }
 }
 ```
-
 After you created this `package.json` file run `npm install`.
 
 Now create your `server.js` file with the following content.
+```
+'use strict';
 
-        'use strict';
+const express = require('express');
 
-        const express = require('express');
+// Constants
+const PORT = 8080;
+const HOST = '0.0.0.0';
 
-        // Constants
-        const PORT = 8080;
-        const HOST = '0.0.0.0';
+// App
+const app = express();
+app.get('/', (req, res) => {
+  res.send('Hello world\n');
+});
 
-        // App
-        const app = express();
-        app.get('/', (req, res) => {
-          res.send('Hello world\n');
-        });
-
-        app.listen(PORT, HOST);
-        console.log(`Running on http://${HOST}:${PORT}`);
-
+app.listen(PORT, HOST);
+console.log(`Running on http://${HOST}:${PORT}`);
+```
 Now that we have an application let's put in in a container!
 
 ## Task 3: Node.js application in a self created container
