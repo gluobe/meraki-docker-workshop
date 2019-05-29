@@ -20,3 +20,5 @@ In this hands-on workshop you will learn the basics of Docker.
 ## More info
 
 * [Our Website](http://www.gluo.be)
+* [Docker Website](https://www.docker.com)
+* [Docker Hub](https://hub.docker.com)
