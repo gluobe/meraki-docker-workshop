@@ -16,6 +16,7 @@ In this hands-on workshop you will learn the basics of Docker.
 ## People
 
 * Steven Trescinski: steven@gluo.be
+* Joris Jamers : joris@gluo.be
 
 ## More info
 
