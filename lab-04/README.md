@@ -81,7 +81,7 @@ of the container.
 
 ![Nginx port mapping](images/lab-04-port-mapping.png)
 
-Visit the service with in your browser on `workshop_instance<number>.gluo.cloud`
+Visit the service with in your browser on `instance<number>.gluo.cloud`
 and you should see a working `nginx` deployment.
 
 ## Task 5: Use the basic commands to list the containers you created
@@ -108,7 +108,7 @@ are currently running and also the containers that are stopped.
         nginx                latest              53f3fd8007f7        3 weeks ago         109MB
         gluobe/hello-world   latest              ac40b9130319        2 months ago        1.2MB
 
-> !!!! Use a basic command to delete the previously created `nginx` container. !!!! 
+> !!!! Use a basic command to delete the previously created `nginx` container. !!!!
 
 ## Task 6: clean up
 
