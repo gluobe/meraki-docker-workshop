@@ -119,14 +119,14 @@ COPY . .
 EXPOSE 8080
 
 ENTRYPOINT [ "npm", "start" ]
-``` 
+```
 Let's build this image.
 
         docker build -t ${DOCKER_HUB_USERNAME}/hello-javascript .
 
 Now that we have our image we will be able to run this with `Docker`. Also seen in [lab-04](../lab-04), you will have to map the `8080` port on the `8080` port on your system. This is done in the `docker run` command.
 
-        docker run -p 8080:8080 ${DOCKER_HUB_USERNAME/hello-javascript}
+        docker run -p 8080:8080 ${DOCKER_HUB_USERNAME}/hello-javascript
 
 
         > docker_web_app@1.0.0 start /usr/src/app
