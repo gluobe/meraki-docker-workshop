@@ -105,21 +105,21 @@ case.
 
 It will start the server and serve our service on port `8080` inside the
 container. Your entire `Dockerfile` should look something like this.
+```
+FROM node:8
 
-        FROM node:8
+WORKDIR /usr/src/app
 
-        WORKDIR /usr/src/app
+COPY package*.json ./
 
-        COPY package*.json ./
+RUN npm install
 
-        RUN npm install
+COPY . .
 
-        COPY . .
+EXPOSE 8080
 
-        EXPOSE 8080
-
-        ENTRYPOINT [ "npm", "start" ]
-
+ENTRYPOINT [ "npm", "start" ]
+``` 
 Let's build this image.
 
         docker build -t ${DOCKER_HUB_USERNAME}/hello-javascript .
