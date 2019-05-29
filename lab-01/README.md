@@ -9,7 +9,8 @@ this instance.
 To connect to this cloud instance we will need `Putty`. You can download it
 [here](https://the.earth.li/~sgtatham/putty/latest/w64/putty-64bit-0.71-installer.msi).
 
-Fill in the `hostname or ip address` box with the provided `ip address`. Port
+Fill in the `hostname or ip address` box with the provided `ip address` this
+is going to be `instance<number>.gluo.cloud`. Port
 `22` is already the correct port. This doesn't need any other configuration.
 
 The `.ppk` file that is needed for the next configuration is going to be provided
@@ -29,4 +30,4 @@ Before you are able to install some packages you will need in the next labs you
 will have to update your `cloud instance`. This is not really a docker workshop
 scope but it's nice to know anyway.
 
-        sudo apt update 
+        sudo apt update
