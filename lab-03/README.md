@@ -3,6 +3,10 @@
 To introduce you to the world of docker we will list some of the basic commands.
 These are the commands you are probably going to use the most.
 
+This lab is created to show you the basic Docker commands. In this lab you will
+see some output for most of the commands but be aware that this probably won't be
+the case if you do them on your `clean` docker host. 
+
 ## Task 1: Docker info
 
 
