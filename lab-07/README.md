@@ -26,19 +26,21 @@ application. Be free to use your own imagination in creating this application.
 
 Start with a `package.json` file with the following content.
 
-        {
-          "name": "docker_web_app",
-          "version": "1.0.0",
-          "description": "Node.js on Docker",
-          "author": "First Last <first.last@example.com>",
-          "main": "server.js",
-          "scripts": {
-            "start": "node server.js"
-          },
-          "dependencies": {
-            "express": "^4.16.1"
-          }
-        }
+```
+{
+  "name": "docker_web_app",
+  "version": "1.0.0",
+  "description": "Node.js on Docker",
+  "author": "First Last <first.last@example.com>",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.16.1"
+  }
+}
+```
 
 After you created this `package.json` file run `npm install`.
 
