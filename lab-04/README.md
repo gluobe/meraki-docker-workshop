@@ -82,9 +82,30 @@ of the container.
 ![Nginx port mapping](images/lab-04-port-mapping.png)
 
 Visit the service with in your browser on `workshop_instance<number>.gluo.cloud`
-and you should see a working `nginx` deployment. 
+and you should see a working `nginx` deployment.
 
-## Task 5: clean up
+## Task 5: Use the basic commands to list the containers you created
+
+With the commands learned in the previous lab you should be able to list all the containers that
+are currently running and also the containers that are stopped.
+
+        docker ps
+
+        CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS              PORTS                  NAMES
+        985a5a437a50        nginx               "nginx -g 'daemon of…"   9 seconds ago       Up 8 seconds        0.0.0.0:8080->80/tcp   some-nginx
+
+        docker ps -a
+        CONTAINER ID        IMAGE                COMMAND                  CREATED             STATUS                      PORTS                  NAMES
+        985a5a437a50        nginx                "nginx -g 'daemon of…"   45 seconds ago      Up 44 seconds               0.0.0.0:8080->80/tcp   some-nginx
+        d9e40e275ac7        gluobe/hello-world   "cat /hello.txt"         59 seconds ago      Exited (0) 58 seconds ago                          eager_lederberg
+
+        docker images
+
+        REPOSITORY           TAG                 IMAGE ID            CREATED             SIZE
+        nginx                latest              53f3fd8007f7        3 weeks ago         109MB
+        gluobe/hello-world   latest              ac40b9130319        2 months ago        1.2MB
+
+## Task 6: clean up
 
 To clean up run the following command:
 

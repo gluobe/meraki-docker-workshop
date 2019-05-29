@@ -57,7 +57,7 @@ https://github.com/docker-library/official-images/tree/master/library
 
 Once you have identified an image you want to use you can `pull` it from the
 registry.  Pulling an image means that you will download it to your local system
-(laptop).
+(laptop). As seen in [lab-03](../lab-03). 
 
 Use the command below to pull the `nginx` image:
 
