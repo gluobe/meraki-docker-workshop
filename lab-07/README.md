@@ -40,7 +40,18 @@ Start with a `package.json` file with the following content.
   }
 }
 ```
-After you created this `package.json` file run `npm install`.
+After you created this `package.json` file run `npm install`. You wil probably
+get the following output.
+
+        Command 'npm' not found, but can be installed with:
+
+        sudo apt install npm
+
+
+This is because `npm` is not installed on this machine so you will have to run
+the following command before you do the `npm install` command.
+
+        sudo apt install -y npm
 
 Now create your `server.js` file with the following content.
 ```
