@@ -94,10 +94,13 @@ are currently running and also the containers that are stopped.
         CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS              PORTS                  NAMES
         985a5a437a50        nginx               "nginx -g 'daemon of…"   9 seconds ago       Up 8 seconds        0.0.0.0:8080->80/tcp   some-nginx
 
+
         docker ps -a
+
         CONTAINER ID        IMAGE                COMMAND                  CREATED             STATUS                      PORTS                  NAMES
         985a5a437a50        nginx                "nginx -g 'daemon of…"   45 seconds ago      Up 44 seconds               0.0.0.0:8080->80/tcp   some-nginx
         d9e40e275ac7        gluobe/hello-world   "cat /hello.txt"         59 seconds ago      Exited (0) 58 seconds ago                          eager_lederberg
+
 
         docker images
 
